@@ -337,75 +337,77 @@ $ git push -u <원격지> <브런치> => -u : 업데이트
 
 - ### git bash & github  사용법 
 
-    Administrator@DESKTOP-L5USBSK MINGW64 /d/Python/workspace/mysite
-    $ git init
-    Initialized empty Git repository in D:/Python/workspace/mysite/.git/
-    
-    Administrator@DESKTOP-L5USBSK MINGW64 /d/Python/workspace/mysite (master)
-    $ ls
-    db.sqlite3  mysite/  readme.assets/  scr1.png
-    manage.py*  polls/   readme.md       scr2.png
-    
-    Administrator@DESKTOP-L5USBSK MINGW64 /d/Python/workspace/mysite (master)
-    $ git add .
-    
-    Administrator@DESKTOP-L5USBSK MINGW64 /d/Python/workspace/mysite (master)
-    $ git commit
-    [master (root-commit) 4f4cc38] first commit
-     28 files changed, 415 insertions(+)
-     create mode 100644 db.sqlite3
-     create mode 100644 manage.py
-     create mode 100644 mysite/__init__.py
-     create mode 100644 mysite/__pycache__/__init__.cpython-39.pyc
-     create mode 100644 mysite/__pycache__/settings.cpython-39.pyc
-     create mode 100644 mysite/__pycache__/urls.cpython-39.pyc
-     create mode 100644 mysite/__pycache__/wsgi.cpython-39.pyc
-     create mode 100644 mysite/asgi.py
-     create mode 100644 mysite/settings.py
-     create mode 100644 mysite/urls.py
-     create mode 100644 mysite/wsgi.py
-     create mode 100644 polls/__init__.py
-     create mode 100644 polls/__pycache__/__init__.cpython-39.pyc
-     create mode 100644 polls/__pycache__/urls.cpython-39.pyc
-     create mode 100644 polls/__pycache__/views.cpython-39.pyc
-     create mode 100644 polls/admin.py
-     create mode 100644 polls/apps.py
-     create mode 100644 polls/migrations/__init__.py
-     create mode 100644 polls/models.py
-     create mode 100644 polls/tests.py
-     create mode 100644 polls/urls.py
-     create mode 100644 polls/views.py
-     create mode 100644 readme.assets/image-20220313191518852.png
-     create mode 100644 readme.assets/scr1.png
-     create mode 100644 readme.assets/scr2.png
-     create mode 100644 readme.md
-     create mode 100644 scr1.png
-     create mode 100644 scr2.png
-    
-    Administrator@DESKTOP-L5USBSK MINGW64 /d/Python/workspace/mysite (master)
-    $ git log
-    commit 4f4cc38240ba178fde54ca8b0f8f13605e4cc686 (HEAD -> master)
-    Author: LEEYOUNGJIN1 <jin9503744@naver.com>
-    Date:   Sun Mar 13 22:37:06 2022 +0900
-    first commit
-    Administrator@DESKTOP-L5USBSK MINGW64 /d/Python/workspace/mysite (master)
-    
-    Administrator@DESKTOP-L5USBSK MINGW64 /d/Python/workspace/mysite (master)
-    $ git remote add origin https://github.com/LEEYOUNGJIN1/mysite.git
-    
-    Administrator@DESKTOP-L5USBSK MINGW64 /d/Python/workspace/mysite (master)
-    $ git push -u origin master
-    Enumerating objects: 31, done.
-    Counting objects: 100% (31/31), done.
-    Delta compression using up to 8 threads
-    Compressing objects: 100% (29/29), done.
-    Writing objects: 100% (31/31), 129.50 KiB | 12.95 MiB/s, done.
-    Total 31 (delta 1), reused 0 (delta 0), pack-reused 0
-    remote: Resolving deltas: 100% (1/1), done.
-    To https://github.com/LEEYOUNGJIN1/mysite.git
-    
-     * [new branch]      master -> master
-       Branch 'master' set up to track remote branch 'master' from 'origin'.
-    
-    Administrator@DESKTOP-L5USBSK MINGW64 /d/Python/workspace/mysite (master)
+```objc
+Administrator@DESKTOP-L5USBSK MINGW64 /d/Python/workspace/mysite
+$ git init
+Initialized empty Git repository in D:/Python/workspace/mysite/.git/
+
+Administrator@DESKTOP-L5USBSK MINGW64 /d/Python/workspace/mysite (master)
+$ ls
+db.sqlite3  mysite/  readme.assets/  scr1.png
+manage.py*  polls/   readme.md       scr2.png
+
+Administrator@DESKTOP-L5USBSK MINGW64 /d/Python/workspace/mysite (master)
+$ git add .
+
+Administrator@DESKTOP-L5USBSK MINGW64 /d/Python/workspace/mysite (master)
+$ git commit
+[master (root-commit) 4f4cc38] first commit
+ 28 files changed, 415 insertions(+)
+ create mode 100644 db.sqlite3
+ create mode 100644 manage.py
+ create mode 100644 mysite/__init__.py
+ create mode 100644 mysite/__pycache__/__init__.cpython-39.pyc
+ create mode 100644 mysite/__pycache__/settings.cpython-39.pyc
+ create mode 100644 mysite/__pycache__/urls.cpython-39.pyc
+ create mode 100644 mysite/__pycache__/wsgi.cpython-39.pyc
+ create mode 100644 mysite/asgi.py
+ create mode 100644 mysite/settings.py
+ create mode 100644 mysite/urls.py
+ create mode 100644 mysite/wsgi.py
+ create mode 100644 polls/__init__.py
+ create mode 100644 polls/__pycache__/__init__.cpython-39.pyc
+ create mode 100644 polls/__pycache__/urls.cpython-39.pyc
+ create mode 100644 polls/__pycache__/views.cpython-39.pyc
+ create mode 100644 polls/admin.py
+ create mode 100644 polls/apps.py
+ create mode 100644 polls/migrations/__init__.py
+ create mode 100644 polls/models.py
+ create mode 100644 polls/tests.py
+ create mode 100644 polls/urls.py
+ create mode 100644 polls/views.py
+ create mode 100644 readme.assets/image-20220313191518852.png
+ create mode 100644 readme.assets/scr1.png
+ create mode 100644 readme.assets/scr2.png
+ create mode 100644 readme.md
+ create mode 100644 scr1.png
+ create mode 100644 scr2.png
+
+Administrator@DESKTOP-L5USBSK MINGW64 /d/Python/workspace/mysite (master)
+$ git log
+commit 4f4cc38240ba178fde54ca8b0f8f13605e4cc686 (HEAD -> master)
+Author: LEEYOUNGJIN1 <jin9503744@naver.com>
+Date:   Sun Mar 13 22:37:06 2022 +0900
+first commit
+Administrator@DESKTOP-L5USBSK MINGW64 /d/Python/workspace/mysite (master)
+
+Administrator@DESKTOP-L5USBSK MINGW64 /d/Python/workspace/mysite (master)
+$ git remote add origin https://github.com/LEEYOUNGJIN1/mysite.git
+
+Administrator@DESKTOP-L5USBSK MINGW64 /d/Python/workspace/mysite (master)
+$ git push -u origin master
+Enumerating objects: 31, done.
+Counting objects: 100% (31/31), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (29/29), done.
+Writing objects: 100% (31/31), 129.50 KiB | 12.95 MiB/s, done.
+Total 31 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/LEEYOUNGJIN1/mysite.git
+
+ * [new branch]      master -> master
+   Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+Administrator@DESKTOP-L5USBSK MINGW64 /d/Python/workspace/mysite (master)
+```
 
