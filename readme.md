@@ -335,7 +335,9 @@ $ git push -u <원격지> <브런치> => -u : 업데이트
 
 컴퓨터에 연결된  깃허브 계정 확인가능
 
-- ### git bash & github  사용법 
+
+
+- ### 프로젝트 git 등록 
 
 ```objc
 Administrator@DESKTOP-L5USBSK MINGW64 /d/Python/workspace/mysite
@@ -385,8 +387,8 @@ $ git commit
 
 Administrator@DESKTOP-L5USBSK MINGW64 /d/Python/workspace/mysite (master)
 $ git log
-commit 4f4cc38240ba178fde54ca8b0f8f13605e4cc686 (HEAD -> master)
-Author: LEEYOUNGJIN1 <jin9503744@naver.com>
+commit (HEAD -> master)
+Author: LEEYOUNGJIN1 <*************@naver.com>
 Date:   Sun Mar 13 22:37:06 2022 +0900
 first commit
 Administrator@DESKTOP-L5USBSK MINGW64 /d/Python/workspace/mysite (master)
