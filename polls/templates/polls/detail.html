@@ -5,7 +5,9 @@
     <li>{{ choice.choice_text }}</li>
 {% endfor %}
 </ul> -->
+{% load static %}
 
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" >
 
 {% if error_massage%}<p>{{error_message}}<p>{% endif %}
 <form action="{% url 'polls:vote' question.id %}" method="post">

@@ -1,5 +1,3 @@
-
-
 ## 1. 파이썬 가상환경 세팅
 
 
@@ -127,7 +125,7 @@ Django_install_guide :  <https://docs.djangoproject.com/en/4.0/intro/install/>
 
 ![img](https://i.stack.imgur.com/rLfSC.jpg)
 
-## 
+
 
 ### 프로젝트 생성, app 생성, 서버 구동
 
@@ -203,6 +201,70 @@ def index(request):
 <img src="readme.assets/scr2.png" alt="scr2" style="zoom:67%;" />
 
 Django_install_guide : https://docs.djangoproject.com/en/4.0/intro/tutorial01/
+
+### 참조 :  Django 개념
+
+> ** Framework :  특정 프로그램을 개발하기 위한 여러 요소들과 메뉴얼인 룰을 제공하는 프로그램** 
+>
+> **Web Framework의 종류** (java, php, rudy, nodejs, python - Djanggo)
+>
+> - Pyhon - Djanggo / Flask / FastApi
+> - JAVA - JSP, Servlet, spring
+> - Ruby - Ruby on rails
+> - Php - Laravel. Codeignitor
+> - Nodejs - Express.js
+> - Javascript - Angular JS
+>
+> Web Server (apache, nginx, IIS) : Static 화일 전송
+>
+> Web Application Sever (Web Framework) : Dynamic 화일 전송
+>
+> **Django**
+> 파이썬으로 작성된 오픈 소스 웹 애플리케이션 프레임워크로 쉽고 빠르게 웹사이트를 개발할 수 있도록 돕는 구성요소로 이루어져있다.
+>
+> - MVC 패턴 기반 MVT (Model-View-Controller)
+> - ORM 기능 지원
+> - 쉬운 DB 관리와 URL 파싱 기능 지원
+>
+> **Spring Framework**
+> 전자 정부 표준프레임워크의 기반이 되는 기술이다. 대규모 프로젝트에서 많이 사용되는 추세이며 `JAVA` 개발에 있어서 대표적인 프레임워크이다.
+>
+> **Ruby on rails**
+> `Ruby`로 개발된 오픈소스 웹 프레임워크이다. `Ruby on rails`은 매우 생산성이 높은 프레임워크라고 한다. `MVC` 패턴을 지원하며 다양한 자동화 옵션을 제공한다고 한다.
+>
+> **Angular JS**
+> `Javascript` 기반의 프레임워크입니다. `MVC` 모델 지원과 같은 기능들을 지원하고, `Javascript`와 `JQuery`로 만들어 코드의 길이를 단순화 할 수 있다.
+>
+> - 재사용이 쉬운 정적인 UI컴퍼넌트를 만들 수 있다.
+>
+> **MVC :  `Model` `View` `Controller`의 앞글자를 딴 단어로 디자인 패턴 중 하나**
+>
+> - Model - 애플리케이션의 정보, 데이터로 데이터와 정보의 가공을 책임지는 컴포넌트.
+>
+> - `View` - 데이터 및 객체의 입력, 출력을 담당하는 곳으로 데이터를 기반의 화면 제공.
+> - `Controller` - 사용자와 데이터를 잇는 다리역할로 사용자가 데이터를 클릭하고 수정하는 것에 대한 이벤트들을 처리.
+>
+> **MVT** : `Django`는 `MVT` 패턴이라고 하고  `MVT`는 `MVC`에서 `Controller`가 `Template`으로 바뀐 패턴임.
+>
+> ![image-20220318173952763](readme.assets/image-20220318173952763.png)
+>
+> - 프로젝트 생성 : django-admin startproject [프로젝트명]
+> - 앱(app) 생성 : 프로젝트> manage.py startapp [앱명]
+> - 프로젝트 환경설정 (Settings.py) 
+>   - Debug : 디버그 모드 설정
+>   - Installed Apps : pip로 설치한 앱, 본인이 추가한 앱 추가
+>   - Middeware_classes : request와 response 사이의 주요 기능 레이어
+>   - Templates : django template 설정(실제 뷰로 html화일 등록)
+>   - Databases : 데이터베이스 엔진 설정
+>   - Static_URL : 정적화일(CSS, Image, javascrip 화일) URL
+> - 프로젝트 관리 (Manage.py)
+>   - `py manage.py startapp` [앱명] : 앱생성
+>   - `py manage.py runserver` [ip:포트] : 서버실행
+>   - py manage.py createsuperuser : 관리자 생성
+>   - py manage.py makemigration : 모델변경사항 체크
+>   - py manage.py migrate [앱명] : 변경사항 db반영
+>   - py manage.py shell : shell 실행
+>   - py manage.py collectstatic : static파일을 한곳으로 모음
 
 
 
@@ -342,8 +404,6 @@ $ git push -u <원격지> <브런치> => -u : 업데이트
 - server 종료하기 => **Ctrl + c**
 - SQL에서 리눅스로 나가기 => **i** *sql -> 리눅스*, **exit** *리눅스 -> sql
 
-
-
 ### 프로젝트 git 등록 
 
 ```objc
@@ -439,7 +499,7 @@ Django_install_guide : https://docs.djangoproject.com/en/4.0/intro/tutorial02/
 }
 ```
 
-```
+```django
 (myenv) D:\Python\workspace\mysite>py manage.py migrate
 Operations to perform:
   Apply all migrations: admin, auth, contenttypes, sessions
@@ -463,6 +523,8 @@ Running migrations:
   Applying auth.0012_alter_user_first_name_max_length... OK
   Applying sessions.0001_initial... OK
 ```
+
+
 
 [`migrate`](https://docs.djangoproject.com/ko/4.0/ref/django-admin/#django-admin-migrate) 명령은 [`INSTALLED_APPS`](https://docs.djangoproject.com/ko/4.0/ref/settings/#std:setting-INSTALLED_APPS) 의 설정을 탐색하여, `mysite/settings.py` 의 데이터베이스 설정과 app 과 함께 제공되는 database migrations 에 따라, 필요한 데이터베이스 테이블을 생성합니다. 이 명령을 수행하면 각 migration 이 적용되는 메세지가 화면에 출력되는 것을 확인할 수 있습니다. 
 
@@ -879,9 +941,63 @@ Local 오라클과 연동하기
 
 ### 참조2. API활용
 
-대화식 Python 쉘에 뛰어들어 Django API를 자유롭게 활용하는 방법
-
-Python 쉘을 실행하려면 다음의 명령을 입력합니다.
+> Python 쉘을 실행.
+>
+> `python manage.py shell`
+>
+> 단순히 “python”을 입력하는 대신 이것을 사용한 이유는 `manage.py` 에 설정된 `DJANGO_SETTINGS_MODULE` 환경변수 때문임.
+>
+> 이 변수는 Django에게 `mysite/settings.py` 의 Python 가져오기 경로를 제공합니다.
+>
+> **shell 을 통해 [데이터베이스 API]를 연결 데이터 입력.(기존 데이터베이스 테이블 = Choice, Question** )
+>
+> ```python
+> (myenv) D:\Python\workspace\mysite>python manage.py shell
+> Python 3.9.10 (tags/v3.9.10:f2f3f53, Jan 17 2022, 15:14:21) [MSC v.1929 64 bit (AMD64)] on win32
+> Type "help", "copyright", "credits" or "license" for more information.
+> (InteractiveConsole)
+> >>> from polls.models import Choice, Question
+> >>> Question.objects.all()
+> <QuerySet [<Question: Question object (1)>, <Question: Question object (2)>, <Question: Question object (3)>]>
+> >>> from django.utils import timezone
+> >>> q = Question(question_text="What are you doing?", pub_date=timezone.now())
+> >>> q.save()
+> >>> q.id
+> 4
+> >>> q.question_text
+> 'What are you doing?'
+> >>> q.pub_date
+> datetime.datetime(2022, 3, 18, 7, 4, 55, 171828, tzinfo=datetime.timezone.utc)
+> >>> Question.objects.all()
+> <QuerySet [<Question: Question object (1)>, <Question: Question object (2)>, <Question: Question object (3)>, <Question: Question object (4)>]>
+> ```
+>
+> (`polls/models.py` 파일의) `Question` 모델을 수정하여, [`__str__()`](https://docs.djangoproject.com/ko/4.0/ref/models/instances/#django.db.models.Model.__str__) 메소드를 `Question`과 `Choice`에 추가
+>
+> 대화식 Python 쉘에 뛰어들어 Django API를 자유롭게 활용하는 방법
+>
+> polls/models.py
+>
+> ```python
+> class Question(models.Model):
+>     question_text = models.CharField(max_length=200)
+>     pub_date = models.DateTimeField('date published')
+>     def __str__(self):
+>         return self.question_text
+>     def was_published_recently(self):
+>         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)   
+> 
+> class Choice(models.Model):
+>     question = models.ForeignKey(Question, on_delete=models.CASCADE)
+>     choice_text = models.CharField(max_length=200)
+>     votes = models.IntegerField(default=0)
+>     def __str__(self):
+>         return self.choice_text
+> ```
+>
+> 모델에 [`__str__()`](https://docs.djangoproject.com/ko/4.0/ref/models/instances/#django.db.models.Model.__str__) 메소드를 추가하는것은 객체의 표현을 대화식 프롬프트에서 편하게 보려는 이유와 Django 가 자동으로 생성하는 관리 사이트 에서도 객체의 표현이 사용되기 때문임.
+>
+> `import datetime`은 Python의 표준 모듈인 [`datetime`](https://docs.python.org/3/library/datetime.html#module-datetime) 모듈을, `from django.utils import timezone`은 Django의 시간대 관련 유틸리티인 [`django.utils.timezone`](https://docs.djangoproject.com/ko/4.0/ref/utils/#module-django.utils.timezone)을 참조하기 위해 추가한 것임.
 
 
 
@@ -2010,34 +2126,21 @@ def results(request, question_id):
 
 이 코드에는 이 튜토리얼에서 아직 다루지 않은 몇 가지 사항이 포함되어 있습니다.
 
-- [`request.POST`](https://docs.djangoproject.com/en/4.0/ref/request-response/#django.http.HttpRequest.POST)키 이름으로 제출된 데이터에 액세스할 수 있는 사전과 유사한 객체입니다. 이 경우 `request.POST['choice']`선택한 선택 항목의 ID를 문자열로 반환합니다. [`request.POST`](https://docs.djangoproject.com/en/4.0/ref/request-response/#django.http.HttpRequest.POST)값은 항상 문자열입니다.
+-  `request.POST['choice']`선택한 선택 항목의 ID를 문자열로 반환하는 메소드로 request.POST`값은 항상 문자임.
 
-  Django는 동일한 방식으로 GET 데이터에 액세스하는 기능도 제공 하지만 POST 호출을 통해서만 데이터가 변경되도록 코드에서 [`request.GET`](https://docs.djangoproject.com/en/4.0/ref/request-response/#django.http.HttpRequest.GET)명시적으로 사용 하고 있습니다.[`request.POST`](https://docs.djangoproject.com/en/4.0/ref/request-response/#django.http.HttpRequest.POST)
+  Django는 동일한 방식으로 GET 데이터에 액세스하는 기능도 제공 하지만 POST 호출을 통해서만 데이터가 변경되도록 코드에서 [`request.GET`](https://docs.djangoproject.com/en/4.0/ref/request-response/#django.http.HttpRequest.GET)명시적으로 사용 하고 있씀.
 
-- `request.POST['choice']`POST 데이터에 제공되지 않은 [`KeyError`](https://docs.python.org/3/library/exceptions.html#KeyError)경우 발생 합니다 . `choice`위의 코드는 [`KeyError`](https://docs.python.org/3/library/exceptions.html#KeyError)질문 양식을 확인하고 제공되지 않은 경우 오류 메시지와 함께 다시 표시합니다 `choice`.
+- `request.POST['choice']`POST 데이터에 제공되지 않은 [`KeyError`](https://docs.python.org/3/library/exceptions.html#KeyError)경우 발생 . `choice`위의 코드는 [`KeyError`](https://docs.python.org/3/library/exceptions.html#KeyError)질문 양식을 확인하고 제공되지 않은 경우 오류 메시지와 함께 다시 표시함 
 
-- 선택 횟수를 증가시킨 후 코드는 [`HttpResponseRedirect`](https://docs.djangoproject.com/en/4.0/ref/request-response/#django.http.HttpResponseRedirect)normal 가 아닌 을 반환합니다 [`HttpResponse`](https://docs.djangoproject.com/en/4.0/ref/request-response/#django.http.HttpResponse). [`HttpResponseRedirect`](https://docs.djangoproject.com/en/4.0/ref/request-response/#django.http.HttpResponseRedirect)단일 인수를 취합니다. 사용자가 리디렉션될 URL입니다(이 경우 URL을 구성하는 방법은 다음 항목 참조).
+- 선택 횟수를 증가시킨 후 코드는 [ HttpResponseRedirect ] normal 이 아닌 값을 반환하고 [ HttpResponse ]. [ HttpResponseRedirect ] 단일 인수를 취하고 사용자가 리디렉션될 URL이며  [ HttpResponseRedirect ] POST 데이터를 성공적으로 처리한 후에는 항상 반환됨. 
 
-  위의 Python 주석이 지적했듯이 [`HttpResponseRedirect`](https://docs.djangoproject.com/en/4.0/ref/request-response/#django.http.HttpResponseRedirect)POST 데이터를 성공적으로 처리한 후에는 항상 반환해야 합니다. 이 팁은 Django에만 국한되지 않습니다. 일반적으로 좋은 웹 개발 방법입니다.
+- [ reverse() ]에서는 생성자에서 함수를 사용하고 있고 [HttpResponseRedirect] 에서 URL을 하드코딩하지 않아도 됨. 제어를 전달하려는 뷰의 이름과 해당 뷰를 가리키는 URL 패턴의 변수 부분이 제공하고 URLconf를 사용하여 이 [reverse()]호출은 `/polls/3/results/` 문자열을 반환함.
 
-- 이 예제 [`reverse()`](https://docs.djangoproject.com/en/4.0/ref/urlresolvers/#django.urls.reverse)에서는 생성자에서 함수를 사용하고 있습니다. [`HttpResponseRedirect`](https://docs.djangoproject.com/en/4.0/ref/request-response/#django.http.HttpResponseRedirect)이 기능을 사용하면 보기 기능에서 URL을 하드코딩하지 않아도 됩니다. 제어를 전달하려는 뷰의 이름과 해당 뷰를 가리키는 URL 패턴의 변수 부분이 제공됩니다. [이 경우 Tutorial 3](https://docs.djangoproject.com/en/4.0/intro/tutorial03/) 에서 설정한 URLconf를 사용하여 이 [`reverse()`](https://docs.djangoproject.com/en/4.0/ref/urlresolvers/#django.urls.reverse)호출은 다음과 같은 문자열을 반환합니다.
-
-```
-'/polls/3/results/'
-```
-
-- 여기서 `3`는 의 값입니다 `question.id`. 이 리디렉션된 URL은 `'results'`뷰를 호출하여 최종 페이지를 표시합니다.
-
-[Tutorial 3](https://docs.djangoproject.com/en/4.0/intro/tutorial03/) 에서 언급했듯이 `request`은 [`HttpRequest`](https://docs.djangoproject.com/en/4.0/ref/request-response/#django.http.HttpRequest)객체입니다. [`HttpRequest`](https://docs.djangoproject.com/en/4.0/ref/request-response/#django.http.HttpRequest)객체 에 대한 자세한 내용은 [요청 및 응답 설명서](https://docs.djangoproject.com/en/4.0/ref/request-response/) 를 참조하십시오 .
-
-누군가가 질문에 투표하면 `vote()`보기가 질문에 대한 결과 페이지로 리디렉션됩니다. 해당 뷰를 작성해 보겠습니다.
-
-[이것은 Tutorial 3](https://docs.djangoproject.com/en/4.0/intro/tutorial03/)`detail()` 의 보기 와 거의 동일합니다 . 유일한 차이점은 템플릿 이름입니다. 나중에 이 중복성을 수정할 것입니다.
+누군가가 질문에 투표하면 `vote()`보기가 질문에 대한 결과 페이지인 results.html 로 리디렉션됨.
 
 polls/templates/polls/results.html
 
 ```python
-polls/templates/polls/results.html ¶
 <h1>{{ question.question_text }}</h1>
 
 <ul>
@@ -2049,10 +2152,6 @@ polls/templates/polls/results.html ¶
 <a href="{% url 'polls:detail' question.id %}">Vote again?</a>
 <a href="{% url 'polls:index' %}">main</a>
 ```
-
-
-
-이제 `/polls/1/`브라우저로 이동하여 질문에 투표하십시오. 투표할 때마다 업데이트되는 결과 페이지가 표시되어야 합니다. 선택 항목을 선택하지 않고 양식을 제출하면 오류 메시지가 표시되어야 합니다.
 
 
 
@@ -2137,13 +2236,165 @@ def vote(request, question_id):
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
 ```
 
-여기서는 두 가지 일반 보기인 [`ListView`](https://docs.djangoproject.com/en/4.0/ref/class-based-views/generic-display/#django.views.generic.list.ListView)및 를 사용 [`DetailView`](https://docs.djangoproject.com/en/4.0/ref/class-based-views/generic-display/#django.views.generic.detail.DetailView)합니다. 이 두 가지 보기는 각각 "개체 목록 표시" 및 "특정 유형의 개체에 대한 세부 정보 페이지 표시"의 개념을 추상화합니다.
+
+
+여기서는 두 가지 일반 보기인 [ListView] 및 [DetailView] 사용하고 두 가지 보기는 각각 "개체 목록 표시" 및 "특정 유형의 개체에 대한 세부 정보 페이지 표시"의 개념을 추상화함.
 
 - 각 일반 보기는 어떤 모델에 따라 작동할지 알아야 합니다. 이것은 `model`속성을 사용하여 제공됩니다.
-- [`DetailView`](https://docs.djangoproject.com/en/4.0/ref/class-based-views/generic-display/#django.views.generic.detail.DetailView)일반 보기는 URL에서 캡처된 기본 키 값이 호출될 것으로 예상하므로 일반 보기에 대해 `"pk"`로 변경 `question_id`했습니다 `pk`.
+- [`DetailView`]는 URL에서 캡처된 기본 키 값이 pk로 호출되고 pk은 question_id 임.
 
 기본적으로 [`DetailView`](https://docs.djangoproject.com/en/4.0/ref/class-based-views/generic-display/#django.views.generic.detail.DetailView)일반 보기는 이라는 템플릿을 사용합니다 . 우리의 경우 템플릿을 사용합니다 . 속성은 자동 생성된 기본 템플릿 이름 대신 특정 템플릿 이름을 사용하도록 Django에 지시하는 데 사용됩니다 . 또한 목록 보기 에 대해서도 지정합니다. 이렇게 하면 결과 보기와 세부 보기가 모두 장면 뒤에 있더라도 렌더링될 때 다른 모양을 갖게 됩니다 .`<app name>/<model name>_detail.html``"polls/question_detail.html"``template_name``template_name``results`[`DetailView`](https://docs.djangoproject.com/en/4.0/ref/class-based-views/generic-display/#django.views.generic.detail.DetailView)
 
 유사하게, [`ListView`](https://docs.djangoproject.com/en/4.0/ref/class-based-views/generic-display/#django.views.generic.list.ListView)일반 보기는 라는 기본 템플릿을 사용합니다 . 우리는 기존 템플릿 을 사용하도록 지시 하는 데 사용합니다.`<app name>/<model name>_list.html``template_name`[`ListView`](https://docs.djangoproject.com/en/4.0/ref/class-based-views/generic-display/#django.views.generic.list.ListView)`"polls/index.html"`
 
 자습서의 이전 부분에서 템플릿에는 `question`및 `latest_question_list` 컨텍스트 변수가 포함된 컨텍스트가 제공되었습니다. 변수가 자동으로 제공되기 때문에 Django 모델( )을 사용하기 때문에 `DetailView`Django 는 컨텍스트 변수의 적절한 이름을 결정할 수 있습니다. 그러나 ListView의 경우 자동으로 생성된 컨텍스트 변수는 입니다. 이를 재정의하기 위해 속성 을 제공하고 대신 사용하도록 지정합니다. 대안적인 접근 방식으로 새로운 기본 컨텍스트 변수와 일치하도록 템플릿을 변경할 수 있지만 Django에 원하는 변수를 사용하도록 지시하는 것이 훨씬 쉽습니다.`question``Question``question_list``context_object_name``latest_question_list`
+
+### 참조 1. 클래스 기반 뷰 (ListView, DetailView)
+
+> view를 FBV(Function Based View) 와 CBV (Class Based View) 로 각각 구현되는데 CBV는 좀 간단히 구현할 수 있음.
+>
+> ListView : 특정 DB table의 모든 record를 가져와서 List로 표시 (예: **게시판 글 목록 전체**)
+>
+> Detailview : 특정 DB table의 톡정 record를 가져와서 Detail 내용 표시 (예 : **게시판의 특정 글 상세 내용**)
+>
+> view를 FBV(Function Based View) 와 CBV (Class Based View) 로 각각 구현되는데 CBV는 좀 간단히 구현할 수 있음.[]()글 목록 전체 
+>
+> **글 목록 전체 표시 (List)**
+>
+> FBV 를 활용하여 글 목록 전체 표시
+>
+> urls.py
+>
+> ```django
+> from django.conf.urls import url
+> from . import views
+> 
+> urlpatterns = [
+>  url(r'^$', views.index, name='index'),
+> ]
+> ```
+>
+> views.py
+>
+> ```
+> from django.shortcuts import render
+> from .models import Question
+> 
+> def index(request):
+>  latest_question_list = Question.objects.order_by('-pub_date')[:5] # 최근 5개의 질문 리스트만 가져온다.
+>  context = {'latest_question_list' : latest_question_list}
+>  return render(request, 'polls/index.html', context)
+> ```
+>
+> 
+
+## 7. 앱 작성하기 - 4
+
+`AppDirectoriesFinder` 정적 파일 검색기로 템플릿 및 정적화일(static) 경로를 찾음.
+
+Django는  **polls/static/polls/style.css** 형태로 **네임스페이싱** 방법(`앱명/static/앱명/[화일명]`)으로 저장할 것을 추천함. 
+
+**polls/static/polls/style.css** 
+
+```css
+li a {
+    color: green;
+}
+
+body {
+    background: white url("images/background.jpg") repeat;    
+}
+```
+
+**polls/templates/polls/index.html**
+
+```
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+         <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+```
+
+`{% static %}` 템플릿 태그는 정적 파일의 절대 URL을 생성합니다.
+
+배경 이미지 추가하기는 이미지 용 하위 디렉토리를 `polls/static/polls/` 디렉토리에 `images` 서브 디렉토리를 만듬.
+
+이 디렉토리 안에 `background.gif`라는 이미지를 추가(`polls/static/polls/images/background.gif`)
+
+![image-20220320183636909](readme.assets/image-20220320183636909.png)
+
+## 8. 앱 테스트 작성하기
+
+### 버그 식별하기
+
+Question.was_published_recently() 메소드는 `Question`이 어제 게시된 경우 `True`를 반환(올바른 동작)할 뿐만 아니라 `Question`의 `pub_date` 필드가 미래로 설정되어 있을 때도 그렇습니다(틀린 동작).
+
+[`shell`](https://docs.djangoproject.com/ko/4.0/ref/django-admin/#django-admin-shell)을 사용해 미래의 날짜로 메소드를 실행해 버그를 확인합니다.
+
+```python
+(myenv) D:\Python\workspace\mysite>python manage.py shell
+Python 3.9.10 (tags/v3.9.10:f2f3f53, Jan 17 2022, 15:14:21) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> import datetime
+>>> from django.utils import timezone
+>>> from polls.models import Question
+>>> future_question = Question(pub_date=timezone.now() + datetime.timedelta(days=30))
+>>> future_question.was_published_recently()
+False
+```
+
+미래는 ‘최근(recent)’이 아니기 때문에 이는 분명히 잘못된 것입니다.
+
+
+
+### 버그를 노출하는 테스트 만들기
+
+애플리케이션 테스트는 일반적으로 애플리케이션의 `tests.py` 파일에 있고 테스트 시스템은 `test` 로 시작하는 파일에서 테스트를 자동으로 찾씀.
+
+`polls` 어플리케이션의 `tests.py` 파일
+
+```python
+import datetime
+from django.test import TestCase
+from django.utils import timezone
+from .models import Question
+
+class QuestionModelTests(TestCase):
+
+    def test_was_published_recently_with_future_question(self):
+        """
+        was_published_recently() returns False for questions whose pub_date
+        is in the future.
+        """
+        time = timezone.now() + datetime.timedelta(days=30)
+        future_question = Question(pub_date=time)
+        self.assertIs(future_question.was_published_recently(), False)
+```
+
+`pub_date`를 가진 `Question` 인스턴스를 생성하는 메소드를 가진 [`django.test.TestCase`](https://docs.djangoproject.com/ko/4.0/topics/testing/tools/#django.test.TestCase) 하위 클래스를 생성
+
+`was_published_recently()`의 출력이 False가 되는지 확인
+
+```py
+PS D:\Python\workspace\mysite> py manage.py test polls
+Found 1 test(s).
+Creating test database for alias 'default'...
+System check identified no issues (0 silenced).
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+OK
+Destroying test database for alias 'default'...
+```
+
